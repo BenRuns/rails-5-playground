@@ -1,0 +1,42 @@
+<%= form_with(model: ring, local: true) do |form| %>
+  <% if ring.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ring.errors.count, "error") %> prohibited this ring from being saved:</h2>
+
+      <ul>
+      <% ring.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image, id: :ring_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :ring_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :style %>
+    <%= form.text_field :style, id: :ring_style %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :ring_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :ring_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
